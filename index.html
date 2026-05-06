@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Finding Your Voice — Digital Interactive Book</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Ambient desk texture -->
+  <div class="desk-surface"></div>
+
+  <!-- Loader -->
+  <div class="loader" id="loader">
+    <div class="loader-pages">
+      <div class="lp lp1"></div>
+      <div class="lp lp2"></div>
+      <div class="lp lp3"></div>
+    </div>
+    <p>Opening your book…</p>
+  </div>
+
+  <!-- App -->
+  <div class="app" id="app">
+
+    <!-- Top bar -->
+    <header class="topbar">
+      <div class="topbar-left">
+        <button class="icon-btn" id="tocBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="17" y2="12"/><line x1="3" y1="18" x2="13" y2="18"/></svg>
+        </button>
+        <div class="brand">
+          <span class="brand-module">Module 1</span>
+          <span class="brand-sep"></span>
+          <span class="brand-title">Finding Your Voice</span>
+        </div>
+      </div>
+      <div class="topbar-right">
+        <span class="spread-label" id="spreadLabel">Cover</span>
+        <button class="icon-btn" id="fsBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- TOC Drawer -->
+    <div class="toc-bg" id="tocBg"></div>
+    <aside class="toc" id="toc">
+      <div class="toc-head">
+        <h3>Contents</h3>
+        <button class="icon-btn" id="tocX">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <nav>
+        <a class="toc-a" data-spread="0">Cover</a>
+        <a class="toc-a" data-spread="1">Unit Opener &amp; Warm-Up</a>
+        <a class="toc-a" data-spread="2">Listening — Roar</a>
+        <a class="toc-a" data-spread="3">Reading &amp; Language Input</a>
+        <a class="toc-a" data-spread="4">Speaking &amp; Listening 2</a>
+        <a class="toc-a" data-spread="5">Fight Song Analysis</a>
+        <a class="toc-a" data-spread="6">Critical Thinking &amp; Modals</a>
+        <a class="toc-a" data-spread="7">Writing Task</a>
+        <a class="toc-a" data-spread="8">Presentation &amp; Reflection</a>
+      </nav>
+    </aside>
+
+    <!-- Book Stage -->
+    <main class="stage" id="stage">
+      <div class="book-wrapper" id="bookWrapper">
+
+        <!-- Book shadow -->
+        <div class="book-shadow"></div>
+
+        <!-- The Book -->
+        <div class="book" id="book">
+
+          <!-- LEFT PAGE (static) -->
+          <div class="page-left" id="pageLeft">
+            <div class="pl-inner" id="pageLeftInner"></div>
+            <div class="pg-nav-arrow" id="prevArrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            </div>
+          </div>
+
+          <!-- SPINE -->
+          <div class="spine">
+            <div class="spine-line"></div>
+            <div class="spine-line"></div>
+          </div>
+
+          <!-- RIGHT PAGE (static) -->
+          <div class="page-right" id="pageRight">
+            <div class="pr-inner" id="pageRightInner"></div>
+            <div class="pg-nav-arrow" id="nextArrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </div>
+          </div>
+
+          <!-- FLIP PAGE (animates) -->
+          <div class="flip" id="flip">
+            <div class="flip-front" id="flipFront">
+              <div class="flip-curl" id="flipCurl"></div>
+            </div>
+            <div class="flip-back"  id="flipBack"></div>
+          </div>
+
+        </div><!-- /book -->
+      </div><!-- /book-wrapper -->
+    </main>
+
+    <!-- Floating dots indicator -->
+    <div class="dots-float">
+      <div class="dots" id="dots"></div>
+    </div>
+
+  </div><!-- /app -->
+
+  <script src="script.js"></script>
+</body>
+</html>
